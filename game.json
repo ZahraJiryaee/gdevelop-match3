@@ -18,8 +18,8 @@
     "version": "1.0.0",
     "name": "SnapToGrid",
     "author": "@Lizard-13, D8H",
-    "windowWidth": 800,
-    "windowHeight": 600,
+    "windowWidth": 1140,
+    "windowHeight": 1980,
     "latestCompilationDirectory": "",
     "maxFPS": 60,
     "minFPS": 20,
@@ -149,132 +149,92 @@
         "name": "Button.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Background.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Background.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Slots.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Slots.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/board.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\board.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gem_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gem_0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gem_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gem_1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gem_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gem_2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gem_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gem_3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gem_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gem_4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gem_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gem_5.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
   },
-  "objects": [
-    {
-      "name": "Button",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "Button",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.07999999821186066,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "Button.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "bold": false,
-      "italic": false,
-      "name": "FlatToppedHexagonalText",
-      "smoothed": true,
-      "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "string": "Flat Topped Hexagonal Grid",
-      "font": "",
-      "characterSize": 20,
-      "color": {
-        "b": 175,
-        "g": 197,
-        "r": 206
-      }
-    },
-    {
-      "bold": false,
-      "italic": false,
-      "name": "PointyToppedHexagonalText",
-      "smoothed": true,
-      "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "string": "Pointy Topped Hexagonal Grid",
-      "font": "",
-      "characterSize": 20,
-      "color": {
-        "b": 175,
-        "g": 197,
-        "r": 206
-      }
-    },
-    {
-      "bold": false,
-      "italic": false,
-      "name": "BubbleText",
-      "smoothed": true,
-      "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "string": "Bubble Grid",
-      "font": "",
-      "characterSize": 20,
-      "color": {
-        "b": 175,
-        "g": 197,
-        "r": 206
-      }
-    },
-    {
-      "bold": false,
-      "italic": false,
-      "name": "RectangularText",
-      "smoothed": true,
-      "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "string": "Rectangular Grid",
-      "font": "",
-      "characterSize": 20,
-      "color": {
-        "b": 175,
-        "g": 197,
-        "r": 206
-      }
-    }
-  ],
+  "objects": [],
   "objectsGroups": [],
   "variables": [],
   "layouts": [
@@ -295,56 +255,47 @@
         "grid": true,
         "gridB": 80,
         "gridG": 80,
-        "gridHeight": 32,
-        "gridOffsetX": 8,
-        "gridOffsetY": 8,
+        "gridHeight": 152,
+        "gridOffsetX": 110,
+        "gridOffsetY": 75,
         "gridR": 80,
         "gridType": "rectangular",
-        "gridWidth": 32,
+        "gridWidth": 152,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.7866666625976568
+        "zoomFactor": 0.2074250088691721
       },
       "objectsGroups": [
         {
           "name": "Bubble",
+          "objects": []
+        },
+        {
+          "name": "Gem",
           "objects": [
             {
-              "name": "YellowBubble"
+              "name": "GreenGem"
             },
             {
-              "name": "GreemBubble"
+              "name": "DarkBlueGem"
             },
             {
-              "name": "BlueBubble"
+              "name": "LightBlueGem"
             },
             {
-              "name": "PurpleBubble"
+              "name": "PurpleGem"
             },
             {
-              "name": "RedBubble"
+              "name": "YellowGem"
+            },
+            {
+              "name": "RedGem"
             }
           ]
         }
       ],
       "variables": [],
       "instances": [
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 30,
-          "layer": "",
-          "locked": false,
-          "name": "YellowBubble",
-          "persistentUuid": "35923ca0-d586-448e-bae0-6ca23ba84433",
-          "width": 30,
-          "x": 168,
-          "y": 136,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
         {
           "angle": 0,
           "customSize": false,
@@ -363,16 +314,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "height": 1980,
           "layer": "",
           "locked": false,
-          "name": "Message",
-          "persistentUuid": "3470afe5-4c67-4126-b95b-fa44385b593b",
-          "width": 0,
-          "x": 8,
-          "y": 8,
-          "zOrder": 4,
+          "name": "bg",
+          "persistentUuid": "141c9cd0-b559-4107-a636-1903ddbc207b",
+          "width": 1140,
+          "x": 0,
+          "y": 0,
+          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -383,12 +334,12 @@
           "height": 0,
           "layer": "",
           "locked": false,
-          "name": "YellowBubble",
-          "persistentUuid": "e40c4631-02ca-4d34-805b-bd39b7339e5d",
+          "name": "board",
+          "persistentUuid": "0d972b0c-6f31-4ce7-917b-5cfa4bcd061e",
           "width": 0,
-          "x": 392,
-          "y": 264,
-          "zOrder": 5,
+          "x": 110,
+          "y": 525,
+          "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -399,530 +350,18 @@
           "height": 0,
           "layer": "",
           "locked": false,
-          "name": "YellowBubble",
-          "persistentUuid": "002ce459-b8a4-40f1-91f1-fb0d855f261c",
+          "name": "LightBlueGem",
+          "persistentUuid": "2344fcc0-feb2-430d-9b6c-810cfe49126f",
           "width": 0,
-          "x": 424,
-          "y": 264,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreemBubble",
-          "persistentUuid": "79d3d538-a92d-44db-b340-9b5fe1f74c4b",
-          "width": 0,
-          "x": 424,
-          "y": 296,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreemBubble",
-          "persistentUuid": "e9121493-3525-4059-82db-0cdcc61565fb",
-          "width": 0,
-          "x": 392,
-          "y": 296,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreemBubble",
-          "persistentUuid": "2336c0fb-bd5f-40f4-b1fb-3aa4443bdca5",
-          "width": 0,
-          "x": 104,
-          "y": 232,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueBubble",
-          "persistentUuid": "eeb89d2d-0191-4230-8a43-b6560393fe85",
-          "width": 0,
-          "x": 584,
-          "y": 168,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueBubble",
-          "persistentUuid": "3759cab8-7aa3-4380-96a5-bf98ae4bf49b",
-          "width": 0,
-          "x": 328,
-          "y": 264,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueBubble",
-          "persistentUuid": "402c59cb-eb8a-4359-ad87-64e33dd9cb73",
-          "width": 0,
-          "x": 360,
-          "y": 264,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleBubble",
-          "persistentUuid": "4441d865-5c87-4c8e-910a-a7c35bc22965",
-          "width": 0,
-          "x": 392,
-          "y": 328,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleBubble",
-          "persistentUuid": "783ac321-55c4-455d-8ab4-ebe9834ec3f7",
-          "width": 0,
-          "x": 392,
-          "y": 104,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleBubble",
-          "persistentUuid": "f6c6f09c-6b98-4562-b1c6-9510199ecd4e",
-          "width": 0,
-          "x": 360,
-          "y": 328,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedBubble",
-          "persistentUuid": "af9e1e59-e65a-478d-b3dc-93ea14549353",
-          "width": 0,
-          "x": 328,
-          "y": 296,
-          "zOrder": 16,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedBubble",
-          "persistentUuid": "b7091f83-7a97-4c77-b443-798d5cac3f92",
-          "width": 0,
-          "x": 360,
-          "y": 296,
-          "zOrder": 17,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedBubble",
-          "persistentUuid": "e05f164c-5790-437f-a9d8-d1ee14c092ea",
-          "width": 0,
-          "x": 648,
-          "y": 264,
-          "zOrder": 18,
+          "x": 110,
+          "y": 531,
+          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         }
       ],
       "objects": [
-        {
-          "name": "YellowBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "YellowBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": -1,
-                        "y": -1
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "GreemBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "GreenBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": -1,
-                        "y": -1
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "BlueBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "BlueBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": -1,
-                        "y": -1
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "PurpleBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "PurpuleBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": -1,
-                        "y": -1
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "RedBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "RedBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": -1,
-                        "y": -1
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
         {
           "name": "Drawer",
           "tags": "",
@@ -947,73 +386,357 @@
           "clearBetweenFrames": false
         },
         {
-          "bold": false,
-          "italic": false,
-          "name": "Message",
-          "smoothed": true,
+          "name": "bg",
           "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
+          "type": "Sprite",
+          "updateIfNotVisible": false,
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Drag a bubble and it should snap to the grid",
-          "font": "",
-          "characterSize": 20,
-          "color": {
-            "b": 255,
-            "g": 255,
-            "r": 255
-          }
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\Background.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "board",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\board.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "GreenGem",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Draggable",
+              "type": "DraggableBehavior::Draggable"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gem_0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DarkBlueGem",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Draggable",
+              "type": "DraggableBehavior::Draggable"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gem_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LightBlueGem",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Draggable",
+              "type": "DraggableBehavior::Draggable"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gem_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PurpleGem",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Draggable",
+              "type": "DraggableBehavior::Draggable"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gem_3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "YellowGem",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Draggable",
+              "type": "DraggableBehavior::Draggable"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gem_4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RedGem",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Draggable",
+              "type": "DraggableBehavior::Draggable"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gem_5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "Button",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "Button.VariableString(sceneName)",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
         {
           "disabled": false,
           "folded": false,
@@ -1052,7 +775,7 @@
               "parameters": [
                 "cellWidth",
                 "=",
-                "32"
+                "152"
               ],
               "subInstructions": []
             },
@@ -1064,7 +787,7 @@
               "parameters": [
                 "cellHeight",
                 "=",
-                "32"
+                "152"
               ],
               "subInstructions": []
             },
@@ -1076,7 +799,7 @@
               "parameters": [
                 "offsetX",
                 "=",
-                "8"
+                "110"
               ],
               "subInstructions": []
             },
@@ -1088,7 +811,7 @@
               "parameters": [
                 "offsetY",
                 "=",
-                "8"
+                "75"
               ],
               "subInstructions": []
             }
@@ -1252,7 +975,7 @@
                 "value": "DraggableBehavior::Dragged"
               },
               "parameters": [
-                "Bubble",
+                "Gem",
                 "Draggable"
               ],
               "subInstructions": []
@@ -1266,7 +989,7 @@
               },
               "parameters": [
                 "",
-                "Bubble",
+                "Gem",
                 "Variable(cellWidth)",
                 "Variable(cellHeight)",
                 "Variable(offsetX)",
@@ -1306,18 +1029,18 @@
       "behaviorsSharedData": []
     },
     {
-      "b": 27,
+      "b": 42,
       "disableInputWhenNotFocused": true,
       "mangledName": "BubbleGridScene",
       "name": "BubbleGridScene",
       "oglFOV": 90,
       "oglZFar": 500,
       "oglZNear": 1,
-      "r": 54,
+      "r": 139,
       "standardSortMethod": false,
       "stopSoundsOnStartup": true,
       "title": "",
-      "v": 46,
+      "v": 87,
       "uiSettings": {
         "grid": true,
         "gridB": 80,
@@ -1330,7 +1053,7 @@
         "gridWidth": 16,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 1.0933332420349124
+        "zoomFactor": 0.4933332420349126
       },
       "objectsGroups": [
         {
@@ -1971,35 +1694,9 @@
                 "Left"
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "Button",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "Button.VariableString(sceneName)",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
+          "actions": [],
           "events": []
         },
         {
@@ -2828,35 +2525,9 @@
                 "Left"
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "Button",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "Button.VariableString(sceneName)",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
+          "actions": [],
           "events": []
         },
         {
@@ -3685,35 +3356,9 @@
                 "Left"
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "Button",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "Button.VariableString(sceneName)",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
+          "actions": [],
           "events": []
         },
         {
@@ -4292,160 +3937,7 @@
     {
       "associatedLayout": "RectangularGridScene",
       "name": "UI",
-      "instances": [
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 60,
-          "layer": "",
-          "locked": false,
-          "name": "Button",
-          "persistentUuid": "c2ebad85-d688-4810-a789-322503fcee03",
-          "width": 180,
-          "x": 210,
-          "y": 520,
-          "zOrder": 19,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "sceneName",
-              "type": "string",
-              "value": "PointyToppedHexagonalGridScene"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 60,
-          "layer": "",
-          "locked": false,
-          "name": "Button",
-          "persistentUuid": "86720001-cb36-4ef1-adb4-004c0a83c442",
-          "width": 180,
-          "x": 610,
-          "y": 520,
-          "zOrder": 19,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "sceneName",
-              "type": "string",
-              "value": "BubbleGridScene"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 32,
-          "layer": "",
-          "locked": false,
-          "name": "PointyToppedHexagonalText",
-          "persistentUuid": "1793f6d3-8b9a-4db3-aa21-d4cce0092d20",
-          "width": 160,
-          "x": 230,
-          "y": 525,
-          "zOrder": 20,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 32,
-          "layer": "",
-          "locked": false,
-          "name": "BubbleText",
-          "persistentUuid": "795b323c-4cc1-4501-8b5f-0c1ddf26b350",
-          "width": 128,
-          "x": 650,
-          "y": 535,
-          "zOrder": 21,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 32,
-          "layer": "",
-          "locked": false,
-          "name": "RectangularText",
-          "persistentUuid": "6c8483ec-43d8-418f-a4d6-8fb8bc18812e",
-          "width": 160,
-          "x": 20,
-          "y": 535,
-          "zOrder": 20,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 32,
-          "layer": "",
-          "locked": false,
-          "name": "FlatToppedHexagonalText",
-          "persistentUuid": "cceb2029-c9b0-4c56-913a-8f28211ae3f5",
-          "width": 160,
-          "x": 430,
-          "y": 525,
-          "zOrder": 22,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 60,
-          "layer": "",
-          "locked": false,
-          "name": "Button",
-          "persistentUuid": "5a0f13b5-5662-4987-a7f1-f109a12cedd6",
-          "width": 180,
-          "x": 10,
-          "y": 520,
-          "zOrder": 19,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "sceneName",
-              "type": "string",
-              "value": "RectangularGridScene"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 60,
-          "layer": "",
-          "locked": false,
-          "name": "Button",
-          "persistentUuid": "e9360c6a-49ee-472a-8eec-4000ffb6628d",
-          "width": 180,
-          "x": 410,
-          "y": 520,
-          "zOrder": 19,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "sceneName",
-              "type": "string",
-              "value": "FlatToppedHexagonalGridScene"
-            }
-          ]
-        }
-      ],
+      "instances": [],
       "editionSettings": {
         "grid": true,
         "gridB": 255,
