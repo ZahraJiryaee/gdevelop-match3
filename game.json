@@ -230,6 +230,15 @@
         "name": "assets\\gem_5.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/tranparent.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\tranparent.jpg",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -253,17 +262,15 @@
       "v": 46,
       "uiSettings": {
         "grid": true,
-        "gridB": 80,
-        "gridG": 80,
+        "gridType": "rectangular",
+        "gridWidth": 152,
         "gridHeight": 152,
         "gridOffsetX": 110,
         "gridOffsetY": 75,
-        "gridR": 80,
-        "gridType": "rectangular",
-        "gridWidth": 152,
+        "gridColor": 10401023,
         "snap": true,
-        "windowMask": false,
-        "zoomFactor": 0.2074250088691721
+        "zoomFactor": 0.21277077672481634,
+        "windowMask": false
       },
       "objectsGroups": [
         {
@@ -294,7 +301,373 @@
           ]
         }
       ],
-      "variables": [],
+      "variables": [
+        {
+          "name": "indexX",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "indexY",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "name": "generateRandomColor",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "GemColors",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "YellowGem"
+            },
+            {
+              "type": "string",
+              "value": "DarkBlueGem"
+            },
+            {
+              "type": "string",
+              "value": "LightBlueGem"
+            },
+            {
+              "type": "string",
+              "value": "PurpleGem"
+            },
+            {
+              "type": "string",
+              "value": "GreenGem"
+            },
+            {
+              "type": "string",
+              "value": "RedGem"
+            }
+          ]
+        },
+        {
+          "name": "index",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Rows",
+          "type": "array",
+          "children": []
+        },
+        {
+          "name": "gemBeingDroppedX",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "gemBeingDroppedY",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "gemBeingDraggedX",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "gemBeingDraggedY",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "ZOrder",
+          "type": "number",
+          "value": 40
+        },
+        {
+          "name": "validMoves",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "x"
+            },
+            {
+              "type": "string",
+              "value": "x"
+            },
+            {
+              "type": "string",
+              "value": "x"
+            },
+            {
+              "type": "string",
+              "value": "x"
+            }
+          ]
+        },
+        {
+          "name": "leftItem",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "rightItem",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "upItem",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "downItem",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "droppedItemXY",
+          "type": "string",
+          "value": "x"
+        },
+        {
+          "name": "droppedItemTemp",
+          "type": "structure",
+          "children": [
+            {
+              "name": "color",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "id",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "mapXYtoIndex",
+          "type": "structure",
+          "children": [
+            {
+              "name": "x110y1139",
+              "type": "number",
+              "value": 24
+            },
+            {
+              "name": "x110y1291",
+              "type": "number",
+              "value": 30
+            },
+            {
+              "name": "x110y531",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "x110y683",
+              "type": "string",
+              "value": "6"
+            },
+            {
+              "name": "x110y835",
+              "type": "number",
+              "value": 12
+            },
+            {
+              "name": "x110y987",
+              "type": "number",
+              "value": 18
+            },
+            {
+              "name": "x262y1139",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "x262y1291",
+              "type": "number",
+              "value": 31
+            },
+            {
+              "name": "x262y531",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "name": "x262y683",
+              "type": "number",
+              "value": 7
+            },
+            {
+              "name": "x262y835",
+              "type": "number",
+              "value": 13
+            },
+            {
+              "name": "x262y987",
+              "type": "number",
+              "value": 19
+            },
+            {
+              "name": "x414y1139",
+              "type": "number",
+              "value": 26
+            },
+            {
+              "name": "x414y1291",
+              "type": "number",
+              "value": 32
+            },
+            {
+              "name": "x414y531",
+              "type": "number",
+              "value": 2
+            },
+            {
+              "name": "x414y683",
+              "type": "number",
+              "value": 8
+            },
+            {
+              "name": "x414y835",
+              "type": "number",
+              "value": 14
+            },
+            {
+              "name": "x414y987",
+              "type": "number",
+              "value": 20
+            },
+            {
+              "name": "x566y1139",
+              "type": "number",
+              "value": 27
+            },
+            {
+              "name": "x566y1291",
+              "type": "number",
+              "value": 33
+            },
+            {
+              "name": "x566y531",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "name": "x566y683",
+              "type": "number",
+              "value": 9
+            },
+            {
+              "name": "x566y835",
+              "type": "number",
+              "value": 15
+            },
+            {
+              "name": "x566y987",
+              "type": "number",
+              "value": 21
+            },
+            {
+              "name": "x718y1139",
+              "type": "number",
+              "value": 28
+            },
+            {
+              "name": "x718y1291",
+              "type": "number",
+              "value": 34
+            },
+            {
+              "name": "x718y531",
+              "type": "number",
+              "value": 4
+            },
+            {
+              "name": "x718y683",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "x718y835",
+              "type": "number",
+              "value": 16
+            },
+            {
+              "name": "x718y987",
+              "type": "number",
+              "value": 22
+            },
+            {
+              "name": "x870y1139",
+              "type": "number",
+              "value": 29
+            },
+            {
+              "name": "x870y1291",
+              "type": "number",
+              "value": 35
+            },
+            {
+              "name": "x870y531",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "name": "x870y683",
+              "type": "number",
+              "value": 11
+            },
+            {
+              "name": "x870y835",
+              "type": "number",
+              "value": 17
+            },
+            {
+              "name": "x870y987",
+              "type": "number",
+              "value": 23
+            }
+          ]
+        },
+        {
+          "name": "draggedItemXY",
+          "type": "string",
+          "value": "x"
+        },
+        {
+          "name": "draggedItemTemp",
+          "type": "structure",
+          "children": [
+            {
+              "name": "color",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "id",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "rightValidMove",
+          "type": "string",
+          "value": "none"
+        },
+        {
+          "name": "buildValidMove",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "resetItems",
+          "type": "boolean",
+          "value": false
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -346,16 +719,48 @@
         },
         {
           "angle": 0,
+          "customSize": true,
+          "height": 152,
+          "layer": "",
+          "locked": false,
+          "name": "NewObject",
+          "persistentUuid": "ea4ae805-42c6-4be0-bacc-2fb060f46077",
+          "width": 304,
+          "x": 414,
+          "y": 1595,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
           "customSize": false,
           "height": 0,
           "layer": "",
           "locked": false,
-          "name": "LightBlueGem",
-          "persistentUuid": "2344fcc0-feb2-430d-9b6c-810cfe49126f",
+          "name": "droppedItemXY",
+          "persistentUuid": "443bb98e-793d-4d15-8082-6d6287a6bd2e",
           "width": 0,
-          "x": 110,
-          "y": 531,
-          "zOrder": 22,
+          "x": 262,
+          "y": 227,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "ValidMove_0",
+          "persistentUuid": "75155f14-ceb2-4999-bd5b-bfccf79385cb",
+          "width": 0,
+          "x": 262,
+          "y": 379,
+          "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -476,6 +881,10 @@
             {
               "name": "Draggable",
               "type": "DraggableBehavior::Draggable"
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
             }
           ],
           "animations": [
@@ -521,6 +930,10 @@
             {
               "name": "Draggable",
               "type": "DraggableBehavior::Draggable"
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
             }
           ],
           "animations": [
@@ -566,6 +979,10 @@
             {
               "name": "Draggable",
               "type": "DraggableBehavior::Draggable"
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
             }
           ],
           "animations": [
@@ -611,6 +1028,10 @@
             {
               "name": "Draggable",
               "type": "DraggableBehavior::Draggable"
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
             }
           ],
           "animations": [
@@ -701,6 +1122,10 @@
             {
               "name": "Draggable",
               "type": "DraggableBehavior::Draggable"
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
             }
           ],
           "animations": [
@@ -734,6 +1159,66 @@
               ]
             }
           ]
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "NewObject",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "droppedItemXY",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "ValidMove_0",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
         }
       ],
       "events": [
@@ -943,6 +1428,114 @@
                     }
                   ],
                   "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Repeat",
+                  "repeatExpression": "6",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "indexY",
+                        "+",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "indexX",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Repeat",
+                      "repeatExpression": "6",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "generateRandomColor",
+                            "=",
+                            "RandomInRange(0, 5)"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "CreateByName"
+                          },
+                          "parameters": [
+                            "",
+                            "Gem",
+                            "VariableString(GemColors[Variable(generateRandomColor)])",
+                            "Variable(cellWidth) * Variable(indexX) + Variable(offsetX)",
+                            "Variable(cellHeight) * Variable(indexY) + Variable(offsetY)",
+                            "\"\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarSceneTxt"
+                          },
+                          "parameters": [
+                            "Rows[Variable(index)]",
+                            "=",
+                            "VariableString(GemColors[Variable(generateRandomColor)])"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "indexX",
+                            "+",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "+",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 }
               ],
               "parameters": []
@@ -961,8 +1554,98 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Snap the dragged object to the in-game grid. It's not related to the grid used in the scene editor.",
+          "comment": "Snap the dragged object to the in-game grid. It's not related to the grid used in the scene editor // store drag & drop positions",
           "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Gem",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "gemBeingDraggedX",
+                "=",
+                "Gem.X()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "gemBeingDraggedY",
+                "=",
+                "Gem.Y()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Gem",
+                "=",
+                "Variable(ZOrder)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "ZOrder",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         },
         {
           "disabled": false,
@@ -1000,690 +1683,25 @@
             }
           ],
           "events": []
-        }
-      ],
-      "layers": [
-        {
-          "ambientLightColorB": 200,
-          "ambientLightColorG": 200,
-          "ambientLightColorR": 200,
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "name": "",
-          "visibility": true,
-          "cameras": [
-            {
-              "defaultSize": true,
-              "defaultViewport": true,
-              "height": 0,
-              "viewportBottom": 1,
-              "viewportLeft": 0,
-              "viewportRight": 1,
-              "viewportTop": 0,
-              "width": 0
-            }
-          ],
-          "effects": []
-        }
-      ],
-      "behaviorsSharedData": []
-    },
-    {
-      "b": 42,
-      "disableInputWhenNotFocused": true,
-      "mangledName": "BubbleGridScene",
-      "name": "BubbleGridScene",
-      "oglFOV": 90,
-      "oglZFar": 500,
-      "oglZNear": 1,
-      "r": 139,
-      "standardSortMethod": false,
-      "stopSoundsOnStartup": true,
-      "title": "",
-      "v": 87,
-      "uiSettings": {
-        "grid": true,
-        "gridB": 80,
-        "gridG": 80,
-        "gridHeight": 28,
-        "gridOffsetX": 8,
-        "gridOffsetY": 24,
-        "gridR": 80,
-        "gridType": "rectangular",
-        "gridWidth": 16,
-        "snap": true,
-        "windowMask": false,
-        "zoomFactor": 0.4933332420349126
-      },
-      "objectsGroups": [
-        {
-          "name": "Bubble",
-          "objects": [
-            {
-              "name": "YellowBubble"
-            },
-            {
-              "name": "GreemBubble"
-            },
-            {
-              "name": "BlueBubble"
-            },
-            {
-              "name": "PurpleBubble"
-            },
-            {
-              "name": "RedBubble"
-            }
-          ]
-        }
-      ],
-      "variables": [],
-      "instances": [
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 30,
-          "layer": "",
-          "locked": false,
-          "name": "YellowBubble",
-          "persistentUuid": "35923ca0-d586-448e-bae0-6ca23ba84433",
-          "width": 30,
-          "x": 408,
-          "y": 304,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
         },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "Message",
-          "persistentUuid": "3470afe5-4c67-4126-b95b-fa44385b593b",
-          "width": 0,
-          "x": 8,
-          "y": 8,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "YellowBubble",
-          "persistentUuid": "e40c4631-02ca-4d34-805b-bd39b7339e5d",
-          "width": 0,
-          "x": 424,
-          "y": 332,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "YellowBubble",
-          "persistentUuid": "002ce459-b8a4-40f1-91f1-fb0d855f261c",
-          "width": 0,
-          "x": 440,
-          "y": 304,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreemBubble",
-          "persistentUuid": "79d3d538-a92d-44db-b340-9b5fe1f74c4b",
-          "width": 0,
-          "x": 344,
-          "y": 304,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreemBubble",
-          "persistentUuid": "e9121493-3525-4059-82db-0cdcc61565fb",
-          "width": 0,
-          "x": 328,
-          "y": 276,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreemBubble",
-          "persistentUuid": "2336c0fb-bd5f-40f4-b1fb-3aa4443bdca5",
-          "width": 0,
-          "x": 360,
-          "y": 276,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueBubble",
-          "persistentUuid": "eeb89d2d-0191-4230-8a43-b6560393fe85",
-          "width": 0,
-          "x": 392,
-          "y": 332,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueBubble",
-          "persistentUuid": "3759cab8-7aa3-4380-96a5-bf98ae4bf49b",
-          "width": 0,
-          "x": 360,
-          "y": 332,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueBubble",
-          "persistentUuid": "402c59cb-eb8a-4359-ad87-64e33dd9cb73",
-          "width": 0,
-          "x": 376,
-          "y": 304,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleBubble",
-          "persistentUuid": "4441d865-5c87-4c8e-910a-a7c35bc22965",
-          "width": 0,
-          "x": 392,
-          "y": 276,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleBubble",
-          "persistentUuid": "783ac321-55c4-455d-8ab4-ebe9834ec3f7",
-          "width": 0,
-          "x": 376,
-          "y": 248,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleBubble",
-          "persistentUuid": "f6c6f09c-6b98-4562-b1c6-9510199ecd4e",
-          "width": 0,
-          "x": 408,
-          "y": 248,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedBubble",
-          "persistentUuid": "af9e1e59-e65a-478d-b3dc-93ea14549353",
-          "width": 0,
-          "x": 424,
-          "y": 276,
-          "zOrder": 16,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedBubble",
-          "persistentUuid": "b7091f83-7a97-4c77-b443-798d5cac3f92",
-          "width": 0,
-          "x": 440,
-          "y": 248,
-          "zOrder": 17,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedBubble",
-          "persistentUuid": "e05f164c-5790-437f-a9d8-d1ee14c092ea",
-          "width": 0,
-          "x": 456,
-          "y": 276,
-          "zOrder": 18,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        }
-      ],
-      "objects": [
-        {
-          "name": "YellowBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "YellowBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 15,
-                        "y": 15
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "GreemBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "GreenBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 15,
-                        "y": 15
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "BlueBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "BlueBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 15,
-                        "y": 15
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "PurpleBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "PurpuleBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 15,
-                        "y": 15
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "RedBubble",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "RedBubble.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 15,
-                        "y": 15
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "bold": false,
-          "italic": false,
-          "name": "Message",
-          "smoothed": true,
-          "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "Drag a bubble and it should snap to the grid",
-          "font": "",
-          "characterSize": 20,
-          "color": {
-            "b": 255,
-            "g": 255,
-            "r": 255
-          }
-        }
-      ],
-      "events": [
         {
           "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Gem",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
             {
               "type": {
                 "inverted": false,
@@ -1694,24 +1712,13 @@
                 "Left"
               ],
               "subInstructions": []
-            }
-          ],
-          "actions": [],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+            },
             {
               "type": {
                 "inverted": false,
-                "value": "DepartScene"
+                "value": "BuiltinCommonInstructions::Once"
               },
-              "parameters": [
-                ""
-              ],
+              "parameters": [],
               "subInstructions": []
             }
           ],
@@ -1719,13 +1726,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                "value": "ModVarScene"
               },
               "parameters": [
-                "",
-                "\"UI\"",
-                "0",
-                "0"
+                "gemBeingDroppedX",
+                "=",
+                "Gem.X()"
               ],
               "subInstructions": []
             },
@@ -1735,9 +1741,9 @@
                 "value": "ModVarScene"
               },
               "parameters": [
-                "cellWidth",
+                "gemBeingDroppedY",
                 "=",
-                "32"
+                "Gem.Y()"
               ],
               "subInstructions": []
             },
@@ -1747,9 +1753,9 @@
                 "value": "ModVarScene"
               },
               "parameters": [
-                "cellHeight",
+                "leftItem",
                 "=",
-                "32"
+                "Variable(gemBeingDraggedX) - 152"
               ],
               "subInstructions": []
             },
@@ -1759,9 +1765,9 @@
                 "value": "ModVarScene"
               },
               "parameters": [
-                "offsetX",
+                "rightItem",
                 "=",
-                "8+32/2"
+                "Variable(gemBeingDraggedX) + 152"
               ],
               "subInstructions": []
             },
@@ -1771,14 +1777,198 @@
                 "value": "ModVarScene"
               },
               "parameters": [
-                "offsetY",
+                "upItem",
                 "=",
-                "8+32/2"
+                "Variable(gemBeingDraggedY) - 152"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "downItem",
+                "=",
+                "Variable(gemBeingDraggedY) + 152"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "droppedItemXY",
+                "=",
+                "\"x\" + VariableString(gemBeingDroppedX) + \"y\" + VariableString(gemBeingDroppedY)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "draggedItemXY",
+                "=",
+                "\"x\" + VariableString(gemBeingDraggedX) + \"y\" + VariableString(gemBeingDraggedY)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "buildValidMove",
+                "True"
               ],
               "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "leftItem",
+                    "<",
+                    "110"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "leftItem",
+                    "=",
+                    "-1000"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "rightItem",
+                    ">=",
+                    "1022"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "rightItem",
+                    "=",
+                    "3000"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "upItem",
+                    "<",
+                    "531"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "upItem",
+                    "=",
+                    "-2000"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "downItem",
+                    ">=",
+                    "1443"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "downItem",
+                    "=",
+                    "3000"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         },
         {
           "disabled": false,
@@ -1792,7 +1982,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Snap the dragged object to the in-game grid. It's not related to the grid used in the scene editor.",
+          "comment": "detect valid moves. if the move is valid, swap the items; if not, take the item back to its place",
           "comment2": ""
         },
         {
@@ -1803,11 +1993,11 @@
             {
               "type": {
                 "inverted": false,
-                "value": "DraggableBehavior::Dragged"
+                "value": "SceneVariableAsBoolean"
               },
               "parameters": [
-                "Bubble",
-                "Draggable"
+                "buildValidMove",
+                "True"
               ],
               "subInstructions": []
             }
@@ -1816,719 +2006,317 @@
             {
               "type": {
                 "inverted": false,
-                "value": "HexagonalGrid::SnapObjectToBubbleGrid"
+                "value": "ModVarSceneTxt"
               },
               "parameters": [
-                "",
-                "Bubble",
-                "Variable(cellWidth)",
-                "Variable(cellHeight)",
-                "Variable(offsetX)",
-                "Variable(offsetY)",
-                ""
+                "validMoves[0]",
+                "=",
+                "\"x\" + VariableString(leftItem) + \"y\" + VariableString(gemBeingDraggedY)"
               ],
               "subInstructions": []
-            }
-          ],
-          "events": []
-        }
-      ],
-      "layers": [
-        {
-          "ambientLightColorB": 200,
-          "ambientLightColorG": 200,
-          "ambientLightColorR": 200,
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "name": "",
-          "visibility": true,
-          "cameras": [
-            {
-              "defaultSize": true,
-              "defaultViewport": true,
-              "height": 0,
-              "viewportBottom": 1,
-              "viewportLeft": 0,
-              "viewportRight": 1,
-              "viewportTop": 0,
-              "width": 0
-            }
-          ],
-          "effects": []
-        }
-      ],
-      "behaviorsSharedData": []
-    },
-    {
-      "b": 27,
-      "disableInputWhenNotFocused": true,
-      "mangledName": "PointyToppedHexagonalGridScene",
-      "name": "PointyToppedHexagonalGridScene",
-      "oglFOV": 90,
-      "oglZFar": 500,
-      "oglZNear": 1,
-      "r": 54,
-      "standardSortMethod": false,
-      "stopSoundsOnStartup": true,
-      "title": "",
-      "v": 46,
-      "uiSettings": {
-        "grid": true,
-        "gridB": 80,
-        "gridG": 80,
-        "gridHeight": 16,
-        "gridOffsetX": 8,
-        "gridOffsetY": 8,
-        "gridR": 80,
-        "gridType": "rectangular",
-        "gridWidth": 28,
-        "snap": true,
-        "windowMask": false,
-        "zoomFactor": 0.7333333343505862
-      },
-      "objectsGroups": [
-        {
-          "name": "Hexagon",
-          "objects": [
-            {
-              "name": "YellowHexagon"
             },
-            {
-              "name": "GreenHexagon"
-            },
-            {
-              "name": "BlueHexagon"
-            },
-            {
-              "name": "PurpleHexagon"
-            },
-            {
-              "name": "RedHexagon"
-            }
-          ]
-        }
-      ],
-      "variables": [],
-      "instances": [
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 30,
-          "layer": "",
-          "locked": false,
-          "name": "YellowHexagon",
-          "persistentUuid": "35923ca0-d586-448e-bae0-6ca23ba84433",
-          "width": 30,
-          "x": 428,
-          "y": 232,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "Message",
-          "persistentUuid": "3470afe5-4c67-4126-b95b-fa44385b593b",
-          "width": 0,
-          "x": 8,
-          "y": 8,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "YellowHexagon",
-          "persistentUuid": "e40c4631-02ca-4d34-805b-bd39b7339e5d",
-          "width": 0,
-          "x": 428,
-          "y": 328,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "YellowHexagon",
-          "persistentUuid": "002ce459-b8a4-40f1-91f1-fb0d855f261c",
-          "width": 0,
-          "x": 400,
-          "y": 280,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedHexagon",
-          "persistentUuid": "86b348af-d667-4e81-a1e4-694deb00eea1",
-          "width": 0,
-          "x": 512,
-          "y": 184,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedHexagon",
-          "persistentUuid": "2d6f0296-eee4-42b1-9f1b-68693c8e4b2d",
-          "width": 0,
-          "x": 484,
-          "y": 232,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedHexagon",
-          "persistentUuid": "cb8c3799-e127-45bb-81ac-82d670f215fd",
-          "width": 0,
-          "x": 456,
-          "y": 280,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleHexagon",
-          "persistentUuid": "d6443765-3649-4b64-934a-7ac07ea266e9",
-          "width": 0,
-          "x": 288,
-          "y": 376,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleHexagon",
-          "persistentUuid": "ddbdace8-2bb4-41aa-8db8-edafe962ecc6",
-          "width": 0,
-          "x": 316,
-          "y": 328,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleHexagon",
-          "persistentUuid": "23d95ca7-5225-4745-bf5b-69d7850e1d8f",
-          "width": 0,
-          "x": 372,
-          "y": 328,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueHexagon",
-          "persistentUuid": "feee64de-815a-452c-b5cf-f4b3729ecb27",
-          "width": 0,
-          "x": 344,
-          "y": 376,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueHexagon",
-          "persistentUuid": "65c66afb-becb-437f-9b83-20855844cfcb",
-          "width": 0,
-          "x": 400,
-          "y": 376,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueHexagon",
-          "persistentUuid": "70777c53-8380-48dd-a742-0eb4b9c0248a",
-          "width": 0,
-          "x": 456,
-          "y": 376,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreenHexagon",
-          "persistentUuid": "33ab87c1-ca06-4b28-b932-bcb56a246b43",
-          "width": 0,
-          "x": 484,
-          "y": 328,
-          "zOrder": 16,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreenHexagon",
-          "persistentUuid": "2cd94c50-5516-4db3-8217-1a5e2cfaf5d1",
-          "width": 0,
-          "x": 540,
-          "y": 328,
-          "zOrder": 17,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreenHexagon",
-          "persistentUuid": "399b4bbd-901c-4c6a-b6d5-22affc659120",
-          "width": 0,
-          "x": 512,
-          "y": 280,
-          "zOrder": 18,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        }
-      ],
-      "objects": [
-        {
-          "name": "YellowHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "YellowHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "GreenHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "GreenHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "BlueHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "BlueHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "PurpleHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "PurpleHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "RedHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "RedHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "bold": false,
-          "italic": false,
-          "name": "Message",
-          "smoothed": true,
-          "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "Drag an hexagon and it should snap to the grid",
-          "font": "",
-          "characterSize": 20,
-          "color": {
-            "b": 255,
-            "g": 255,
-            "r": 255
-          }
-        }
-      ],
-      "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
             {
               "type": {
                 "inverted": false,
-                "value": "MouseButtonReleased"
+                "value": "ModVarSceneTxt"
               },
               "parameters": [
-                "",
-                "Left"
+                "validMoves[1]",
+                "=",
+                "\"x\" + VariableString(gemBeingDraggedX) + \"y\" + VariableString(upItem)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "validMoves[2]",
+                "=",
+                "\"x\" + VariableString(rightItem) + \"y\" + VariableString(gemBeingDraggedY)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "validMoves[3]",
+                "=",
+                "\"x\" + VariableString(gemBeingDraggedX) + \"y\" + VariableString(downItem)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "buildValidMove",
+                "False"
               ],
               "subInstructions": []
             }
           ],
-          "actions": [],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "=",
+                        "VariableString(validMoves[0])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "=",
+                        "VariableString(validMoves[1])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "=",
+                        "VariableString(validMoves[2])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "=",
+                        "VariableString(validMoves[3])"
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "droppedItemXY",
+                    "=",
+                    "VariableString(droppedItemXY)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "ValidMove_0",
+                    "=",
+                    "VariableString(validMoves[0])"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "droppedItemTemp.id",
+                    "=",
+                    "VariableString(mapXYtoIndex[VariableString(droppedItemXY)])"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "droppedItemTemp.color",
+                    "=",
+                    "VariableString(Rows[VariableString(mapXYtoIndex[VariableString(droppedItemXY)])])"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "draggedItemTemp.id",
+                    "=",
+                    "VariableString(mapXYtoIndex[VariableString(draggedItemXY)])"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "draggedItemTemp.color",
+                    "=",
+                    "VariableString(Rows[VariableString(mapXYtoIndex[VariableString(draggedItemXY)])])"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "Rows[Variable(droppedItemTemp.id)]",
+                    "=",
+                    "VariableString(draggedItemTemp.color)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "Rows[Variable(draggedItemTemp.id)]",
+                    "=",
+                    "VariableString(droppedItemTemp.color)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "resetItems",
+                    "True"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "!=",
+                        "VariableString(validMoves[0])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "!=",
+                        "VariableString(validMoves[1])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "!=",
+                        "VariableString(validMoves[2])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "droppedItemXY",
+                        "!=",
+                        "VariableString(validMoves[3])"
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "resetItems",
+                    "True"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         },
         {
           "disabled": false,
@@ -2538,10 +2326,11 @@
             {
               "type": {
                 "inverted": false,
-                "value": "DepartScene"
+                "value": "SceneVariableAsBoolean"
               },
               "parameters": [
-                ""
+                "resetItems",
+                "True"
               ],
               "subInstructions": []
             }
@@ -2550,12 +2339,23 @@
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                "value": "ModVarScene"
               },
               "parameters": [
-                "",
-                "\"UI\"",
-                "0",
+                "indexY",
+                "=",
+                "3"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "indexX",
+                "=",
                 "0"
               ],
               "subInstructions": []
@@ -2566,827 +2366,8 @@
                 "value": "ModVarScene"
               },
               "parameters": [
-                "cellWidth",
+                "index",
                 "=",
-                "56"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "cellHeight",
-                "=",
-                "64"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "offsetX",
-                "=",
-                "8+56/2"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "offsetY",
-                "=",
-                "8+64/2"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Snap the dragged object to the in-game grid. It's not related to the grid used in the scene editor.",
-          "comment2": ""
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DraggableBehavior::Dragged"
-              },
-              "parameters": [
-                "Hexagon",
-                "Draggable"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "HexagonalGrid::SnapObjectToPointyToppedHexagonalGrid"
-              },
-              "parameters": [
-                "",
-                "Hexagon",
-                "Variable(cellWidth)",
-                "Variable(cellHeight)",
-                "Variable(offsetX)",
-                "Variable(offsetY)",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        }
-      ],
-      "layers": [
-        {
-          "ambientLightColorB": 200,
-          "ambientLightColorG": 200,
-          "ambientLightColorR": 200,
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "name": "",
-          "visibility": true,
-          "cameras": [
-            {
-              "defaultSize": true,
-              "defaultViewport": true,
-              "height": 0,
-              "viewportBottom": 1,
-              "viewportLeft": 0,
-              "viewportRight": 1,
-              "viewportTop": 0,
-              "width": 0
-            }
-          ],
-          "effects": []
-        }
-      ],
-      "behaviorsSharedData": []
-    },
-    {
-      "b": 27,
-      "disableInputWhenNotFocused": true,
-      "mangledName": "FlatToppedHexagonalGridScene",
-      "name": "FlatToppedHexagonalGridScene",
-      "oglFOV": 90,
-      "oglZFar": 500,
-      "oglZNear": 1,
-      "r": 54,
-      "standardSortMethod": false,
-      "stopSoundsOnStartup": true,
-      "title": "",
-      "v": 46,
-      "uiSettings": {
-        "grid": true,
-        "gridB": 80,
-        "gridG": 80,
-        "gridHeight": 28,
-        "gridOffsetX": 8,
-        "gridOffsetY": 8,
-        "gridR": 80,
-        "gridType": "rectangular",
-        "gridWidth": 16,
-        "snap": true,
-        "windowMask": false,
-        "zoomFactor": 1.0000000030517575
-      },
-      "objectsGroups": [
-        {
-          "name": "Hexagon",
-          "objects": [
-            {
-              "name": "YellowHexagon"
-            },
-            {
-              "name": "GreenHexagon"
-            },
-            {
-              "name": "BlueHexagon"
-            },
-            {
-              "name": "PurpleHexagon"
-            },
-            {
-              "name": "RedHexagon"
-            }
-          ]
-        }
-      ],
-      "variables": [],
-      "instances": [
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 30,
-          "layer": "",
-          "locked": false,
-          "name": "YellowHexagon",
-          "persistentUuid": "35923ca0-d586-448e-bae0-6ca23ba84433",
-          "width": 30,
-          "x": 424,
-          "y": 204,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "Message",
-          "persistentUuid": "3470afe5-4c67-4126-b95b-fa44385b593b",
-          "width": 0,
-          "x": 8,
-          "y": 8,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "YellowHexagon",
-          "persistentUuid": "e40c4631-02ca-4d34-805b-bd39b7339e5d",
-          "width": 0,
-          "x": 376,
-          "y": 288,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "YellowHexagon",
-          "persistentUuid": "002ce459-b8a4-40f1-91f1-fb0d855f261c",
-          "width": 0,
-          "x": 376,
-          "y": 232,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedHexagon",
-          "persistentUuid": "86b348af-d667-4e81-a1e4-694deb00eea1",
-          "width": 0,
-          "x": 520,
-          "y": 204,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedHexagon",
-          "persistentUuid": "2d6f0296-eee4-42b1-9f1b-68693c8e4b2d",
-          "width": 0,
-          "x": 472,
-          "y": 232,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "RedHexagon",
-          "persistentUuid": "cb8c3799-e127-45bb-81ac-82d670f215fd",
-          "width": 0,
-          "x": 424,
-          "y": 260,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleHexagon",
-          "persistentUuid": "d6443765-3649-4b64-934a-7ac07ea266e9",
-          "width": 0,
-          "x": 280,
-          "y": 344,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleHexagon",
-          "persistentUuid": "ddbdace8-2bb4-41aa-8db8-edafe962ecc6",
-          "width": 0,
-          "x": 280,
-          "y": 288,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PurpleHexagon",
-          "persistentUuid": "23d95ca7-5225-4745-bf5b-69d7850e1d8f",
-          "width": 0,
-          "x": 328,
-          "y": 260,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueHexagon",
-          "persistentUuid": "feee64de-815a-452c-b5cf-f4b3729ecb27",
-          "width": 0,
-          "x": 328,
-          "y": 316,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueHexagon",
-          "persistentUuid": "65c66afb-becb-437f-9b83-20855844cfcb",
-          "width": 0,
-          "x": 376,
-          "y": 344,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "BlueHexagon",
-          "persistentUuid": "70777c53-8380-48dd-a742-0eb4b9c0248a",
-          "width": 0,
-          "x": 424,
-          "y": 316,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreenHexagon",
-          "persistentUuid": "33ab87c1-ca06-4b28-b932-bcb56a246b43",
-          "width": 0,
-          "x": 472,
-          "y": 344,
-          "zOrder": 16,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreenHexagon",
-          "persistentUuid": "2cd94c50-5516-4db3-8217-1a5e2cfaf5d1",
-          "width": 0,
-          "x": 520,
-          "y": 316,
-          "zOrder": 17,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "GreenHexagon",
-          "persistentUuid": "399b4bbd-901c-4c6a-b6d5-22affc659120",
-          "width": 0,
-          "x": 472,
-          "y": 288,
-          "zOrder": 18,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        }
-      ],
-      "objects": [
-        {
-          "name": "YellowHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "YellowHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "GreenHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "GreenHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "BlueHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "BlueHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "PurpleHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "PurpleHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "RedHexagon",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": true,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "RedHexagon.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 28,
-                        "y": 32
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 18.5,
-                        "y": 18.5
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 0
-                          },
-                          {
-                            "x": 37,
-                            "y": 37
-                          },
-                          {
-                            "x": 0,
-                            "y": 37
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "bold": false,
-          "italic": false,
-          "name": "Message",
-          "smoothed": true,
-          "tags": "",
-          "type": "TextObject::Text",
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "Drag an hexagon and it should snap to the grid",
-          "font": "",
-          "characterSize": 20,
-          "color": {
-            "b": 255,
-            "g": 255,
-            "r": 255
-          }
-        }
-      ],
-      "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
-              },
-              "parameters": [
-                "",
-                "\"UI\"",
-                "0",
                 "0"
               ],
               "subInstructions": []
@@ -3394,105 +2375,305 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "TextObject::String"
               },
               "parameters": [
-                "cellWidth",
+                "NewObject",
                 "=",
-                "64"
+                "VariableString(index) + \"start: \""
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "Delete"
               },
               "parameters": [
-                "cellHeight",
-                "=",
-                "56"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "offsetX",
-                "=",
-                "8+64/2"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "offsetY",
-                "=",
-                "8+56/2"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Snap the dragged object to the in-game grid. It's not related to the grid used in the scene editor.",
-          "comment2": ""
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DraggableBehavior::Dragged"
-              },
-              "parameters": [
-                "Hexagon",
-                "Draggable"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "HexagonalGrid::SnapObjectToFlatToppedHexagonalGrid"
-              },
-              "parameters": [
-                "",
-                "Hexagon",
-                "Variable(cellWidth)",
-                "Variable(cellHeight)",
-                "Variable(offsetX)",
-                "Variable(offsetY)",
+                "GreenGem",
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "DarkBlueGem",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "LightBlueGem",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "LightBlueGem",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "PurpleGem",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "YellowGem",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "RedGem",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "resetItems",
+                "False"
+              ],
+              "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::ForEachChildVariable",
+              "iterableVariableName": "Rows",
+              "valueIteratorVariableName": "child",
+              "keyIteratorVariableName": "GemColors",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CreateByName"
+                  },
+                  "parameters": [
+                    "",
+                    "Gem",
+                    "VariableString(child)",
+                    "Variable(cellWidth) * Variable(indexX) + Variable(offsetX)",
+                    "Variable(cellHeight) * Variable(indexY) + Variable(offsetY)",
+                    "\"\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "index",
+                    "+",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "NewObject",
+                    "+",
+                    "VariableString(child)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "indexX",
+                    "+",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "=",
+                            "6"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "=",
+                            "12"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "=",
+                            "18"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "=",
+                            "24"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "=",
+                            "30"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "=",
+                            "36"
+                          ],
+                          "subInstructions": []
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "NewObject",
+                        "+",
+                        "VariableString(index)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "indexY",
+                        "+",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "indexX",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            }
+          ]
         }
       ],
       "layers": [
@@ -3519,7 +2700,12 @@
           "effects": []
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
     }
   ],
   "externalEvents": [],
