@@ -20,7 +20,7 @@
     "author": "@Lizard-13, D8H",
     "windowWidth": 1140,
     "windowHeight": 1980,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "D:\\web\\project - playable ads gdevelop\\_exports\\match3\\v2\\files",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -254,13 +254,7 @@
   },
   "objects": [],
   "objectsGroups": [],
-  "variables": [
-    {
-      "name": "index",
-      "type": "number",
-      "value": 0
-    }
-  ],
+  "variables": [],
   "layouts": [
     {
       "b": 27,
@@ -795,6 +789,71 @@
           "name": "checkFor3MatchInRow",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "checkForEmptyGem",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "GemColorsTemp",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "YellowGem"
+            },
+            {
+              "type": "string",
+              "value": "DarkBlueGem"
+            },
+            {
+              "type": "string",
+              "value": "LightBlueGem"
+            },
+            {
+              "type": "string",
+              "value": "PurpleGem"
+            },
+            {
+              "type": "string",
+              "value": "GreenGem"
+            },
+            {
+              "type": "string",
+              "value": "RedGem"
+            },
+            {
+              "type": "string",
+              "value": "emptyGem"
+            }
+          ]
+        },
+        {
+          "name": "column1",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 6
+            },
+            {
+              "type": "number",
+              "value": 12
+            },
+            {
+              "type": "number",
+              "value": 18
+            },
+            {
+              "type": "number",
+              "value": 24
+            },
+            {
+              "type": "number",
+              "value": 30
+            }
+          ]
         }
       ],
       "instances": [
@@ -2619,6 +2678,103 @@
             }
           ],
           "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "0.5",
+                "\"refillItems\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SnapToGrid::RefillItems"
+              },
+              "parameters": [
+                "",
+                "DarkBlueGem",
+                "GreenGem",
+                "LightBlueGem",
+                "NewObject",
+                "PurpleGem",
+                "RedGem",
+                "YellowGem",
+                "checkformatch3Index",
+                "emptyGem",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SnapToGrid::Match3InRow"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "emptyGem",
+                    "index",
+                    "indexPlus1",
+                    "indexPlus2",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SnapToGrid::Match3InColumn"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "checkformatch3Index",
+                    "emptyGem",
+                    "index",
+                    "indexPlus1",
+                    "indexPlus2",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         }
       ],
       "layers": [
@@ -2674,6 +2830,432 @@
       ],
       "dependencies": [],
       "eventsFunctions": [
+        {
+          "description": "RefillItems",
+          "fullName": "RefillItems",
+          "functionType": "Action",
+          "name": "RefillItems",
+          "private": false,
+          "sentence": "RefillItems",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"refillItems\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "checkformatch3Index",
+                    "=",
+                    "\"\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "index",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "30",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "checkformatch3Index",
+                    "+",
+                    "\"/\" + VariableString(index)"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index)]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "BuiltinCommonInstructions::Or"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "VarScene"
+                              },
+                              "parameters": [
+                                "index",
+                                "=",
+                                "0"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "VarScene"
+                              },
+                              "parameters": [
+                                "index",
+                                "=",
+                                "1"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "VarScene"
+                              },
+                              "parameters": [
+                                "index",
+                                "=",
+                                "2"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "VarScene"
+                              },
+                              "parameters": [
+                                "index",
+                                "=",
+                                "3"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "VarScene"
+                              },
+                              "parameters": [
+                                "index",
+                                "=",
+                                "4"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "VarScene"
+                              },
+                              "parameters": [
+                                "index",
+                                "=",
+                                "5"
+                              ],
+                              "subInstructions": []
+                            }
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "generateRandomColor",
+                            "=",
+                            "RandomInRange(0, 5)"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarSceneTxt"
+                          },
+                          "parameters": [
+                            "Rows[Variable(index)]",
+                            "=",
+                            "VariableString(GemColorsTemp[Variable(generateRandomColor)])"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "index",
+                            "=",
+                            "-1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 6]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 6]",
+                        "=",
+                        "VariableString(Rows[Variable(index)])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index)]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "-1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "index",
+                        "+",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SnapToGrid::generateGrid"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "emptyGem",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "DarkBlueGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "GreenGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "LightBlueGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "NewObject",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "PurpleGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "RedGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "YellowGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "checkformatch3Index",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "emptyGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
         {
           "description": "Match3InColumn",
           "fullName": "Match3InColumn",
@@ -3140,38 +3722,37 @@
                       "subInstructions": []
                     }
                   ],
-                  "events": [
-                    {
-                      "disabled": false,
-                      "folded": false,
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "SnapToGrid::generateGrid"
-                          },
-                          "parameters": [
-                            "",
-                            "DarkBlueGem",
-                            "GreenGem",
-                            "LightBlueGem",
-                            "NewObject",
-                            "PurpleGem",
-                            "RedGem",
-                            "YellowGem",
-                            "emptyGem",
-                            ""
-                          ],
-                          "subInstructions": []
-                        }
-                      ],
-                      "events": []
-                    }
-                  ]
+                  "events": []
                 }
               ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SnapToGrid::generateGrid"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "emptyGem",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ],
           "parameters": [
@@ -3479,18 +4060,6 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
-                        "NewObject",
-                        "+",
-                        "VariableString(child)"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
                         "value": "ModVarScene"
                       },
                       "parameters": [
@@ -3590,18 +4159,6 @@
                         }
                       ],
                       "actions": [
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "TextObject::String"
-                          },
-                          "parameters": [
-                            "NewObject",
-                            "+",
-                            "VariableString(index)"
-                          ],
-                          "subInstructions": []
-                        },
                         {
                           "type": {
                             "inverted": false,
