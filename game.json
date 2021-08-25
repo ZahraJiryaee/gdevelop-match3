@@ -1005,6 +1005,36 @@
               "value": 31
             }
           ]
+        },
+        {
+          "name": "validCells_6MatchesInRow",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 6
+            },
+            {
+              "type": "number",
+              "value": 12
+            },
+            {
+              "type": "number",
+              "value": 18
+            },
+            {
+              "type": "number",
+              "value": 24
+            },
+            {
+              "type": "number",
+              "value": 30
+            }
+          ]
         }
       ],
       "instances": [
@@ -2805,6 +2835,50 @@
             {
               "type": {
                 "inverted": false,
+                "value": "SnapToGrid::Match6InRow"
+              },
+              "parameters": [
+                "",
+                "DarkBlueGem",
+                "GreenGem",
+                "LightBlueGem",
+                "NewObject",
+                "PurpleGem",
+                "RedGem",
+                "YellowGem",
+                "emptyGem",
+                "index",
+                "indexPlus1",
+                "indexPlus2",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SnapToGrid::Match6InColumn"
+              },
+              "parameters": [
+                "",
+                "DarkBlueGem",
+                "GreenGem",
+                "LightBlueGem",
+                "NewObject",
+                "PurpleGem",
+                "RedGem",
+                "YellowGem",
+                "emptyGem",
+                "index",
+                "indexPlus1",
+                "indexPlus2",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "SnapToGrid::Match5InRow"
               },
               "parameters": [
@@ -2998,6 +3072,50 @@
                 {
                   "type": {
                     "inverted": false,
+                    "value": "SnapToGrid::Match6InRow"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "emptyGem",
+                    "index",
+                    "indexPlus1",
+                    "indexPlus2",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SnapToGrid::Match6InColumn"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "emptyGem",
+                    "index",
+                    "indexPlus1",
+                    "indexPlus2",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
                     "value": "SnapToGrid::Match5InRow"
                   },
                   "parameters": [
@@ -3188,6 +3306,751 @@
       "dependencies": [],
       "eventsFunctions": [
         {
+          "description": "Match6InColumn",
+          "fullName": "Match6InColumn",
+          "functionType": "Action",
+          "name": "Match6InColumn",
+          "private": false,
+          "sentence": "Match6InColumn",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "index",
+                    "=",
+                    "-1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "6",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "index",
+                    "+",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index)]",
+                        "=",
+                        "VariableString(Rows[Variable(index) + 6])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 6]",
+                        "=",
+                        "VariableString(Rows[Variable(index) + 12])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 12]",
+                        "=",
+                        "VariableString(Rows[Variable(index) + 18])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 12]",
+                        "=",
+                        "VariableString(Rows[Variable(index) + 24])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 24]",
+                        "=",
+                        "VariableString(Rows[Variable(index) + 30])"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Rows[Variable(index)])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "indexPlus1",
+                        "=",
+                        "VariableString(Rows[Variable(index) + 6])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "indexPlus2",
+                        "=",
+                        "VariableString(Rows[Variable(index) + 12])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index)]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 6]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 12]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 18]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 24]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index) + 30]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "weHaveEmptyGems",
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SnapToGrid::generateGrid"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "emptyGem",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "DarkBlueGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "GreenGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "LightBlueGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "NewObject",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "PurpleGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "RedGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "YellowGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "emptyGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "index",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "indexPlus1",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "indexPlus2",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Match6InRow",
+          "fullName": "Match6InRow",
+          "functionType": "Action",
+          "name": "Match6InRow",
+          "private": false,
+          "sentence": "Match6InRow",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::ForEachChildVariable",
+              "iterableVariableName": "validCells_6MatchesInRow",
+              "valueIteratorVariableName": "child",
+              "keyIteratorVariableName": "",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::And"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarSceneTxt"
+                          },
+                          "parameters": [
+                            "Rows[Variable(child)]",
+                            "=",
+                            "VariableString(Rows[Variable(child) + 1])"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarSceneTxt"
+                          },
+                          "parameters": [
+                            "Rows[Variable(child) + 1]",
+                            "=",
+                            "VariableString(Rows[Variable(child) + 2])"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarSceneTxt"
+                          },
+                          "parameters": [
+                            "Rows[Variable(child) + 2]",
+                            "=",
+                            "VariableString(Rows[Variable(child) + 3])"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarSceneTxt"
+                          },
+                          "parameters": [
+                            "Rows[Variable(child) + 3]",
+                            "=",
+                            "VariableString(Rows[Variable(child) + 4])"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarSceneTxt"
+                          },
+                          "parameters": [
+                            "Rows[Variable(child) + 4]",
+                            "=",
+                            "VariableString(Rows[Variable(child) + 5])"
+                          ],
+                          "subInstructions": []
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Rows[Variable(child)])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "indexPlus1",
+                        "=",
+                        "VariableString(Rows[Variable(child) + 1])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "indexPlus2",
+                        "=",
+                        "VariableString(Rows[Variable(child) + 2])"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(child)]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(child) + 1]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(child) + 2]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(child) + 3]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(child) + 4]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(child) + 5]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "weHaveEmptyGems",
+                        "True"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SnapToGrid::generateGrid"
+                  },
+                  "parameters": [
+                    "",
+                    "DarkBlueGem",
+                    "GreenGem",
+                    "LightBlueGem",
+                    "NewObject",
+                    "PurpleGem",
+                    "RedGem",
+                    "YellowGem",
+                    "emptyGem",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "DarkBlueGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "GreenGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "LightBlueGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "NewObject",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "PurpleGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "RedGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "YellowGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "emptyGem",
+              "optional": false,
+              "supplementaryInformation": "Sprite",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "index",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "indexPlus1",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "indexPlus2",
+              "optional": false,
+              "supplementaryInformation": "TextObject::Text",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
           "description": "Match5InColumn",
           "fullName": "Match5InColumn",
           "functionType": "Action",
@@ -3220,7 +4083,7 @@
               "disabled": false,
               "folded": false,
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "24",
+              "repeatExpression": "12",
               "conditions": [],
               "actions": [
                 {
@@ -3917,7 +4780,7 @@
               "disabled": false,
               "folded": false,
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "24",
+              "repeatExpression": "18",
               "conditions": [],
               "actions": [
                 {
