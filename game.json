@@ -257,6 +257,24 @@
         "name": "assets\\particle.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Star container 2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Star container 2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Star container.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Star container.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -287,7 +305,7 @@
         "gridOffsetY": 75,
         "gridColor": 10401023,
         "snap": true,
-        "zoomFactor": 0.2344556629009547,
+        "zoomFactor": 0.27890026319697525,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1035,20 +1053,25 @@
               "value": 30
             }
           ]
+        },
+        {
+          "name": "Score",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
         {
           "angle": 0,
           "customSize": false,
-          "height": 0,
+          "height": 123,
           "layer": "",
           "locked": false,
           "name": "Drawer",
           "persistentUuid": "13c94edc-6f60-4c06-ace4-94b117c33ce5",
-          "width": 0,
-          "x": 296,
-          "y": 104,
+          "width": 118,
+          "x": 500,
+          "y": 50,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -1111,9 +1134,9 @@
           "name": "index",
           "persistentUuid": "da5512b4-0033-4a2c-9f03-a6004f5df257",
           "width": 0,
-          "x": 262,
-          "y": 227,
-          "zOrder": 5,
+          "x": 303,
+          "y": 115,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1127,7 +1150,7 @@
           "name": "indexPlus1",
           "persistentUuid": "31c50d50-8bfd-4f09-8951-67daf02b3255",
           "width": 0,
-          "x": 562,
+          "x": 766,
           "y": 250,
           "zOrder": 6,
           "numberProperties": [],
@@ -1144,7 +1167,7 @@
           "persistentUuid": "311c4709-be8f-4ee2-bf96-924411d64026",
           "width": 0,
           "x": 766,
-          "y": 227,
+          "y": 341,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -1159,9 +1182,25 @@
           "name": "checkformatch3Index",
           "persistentUuid": "db5bd64a-72eb-49be-80f5-834f1a4acc31",
           "width": 0,
-          "x": 10,
-          "y": 379,
-          "zOrder": 1000000,
+          "x": 766,
+          "y": 431,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 200,
+          "layer": "",
+          "locked": false,
+          "name": "ScoreContainer",
+          "persistentUuid": "028e8576-5f06-4f05-8432-6c5f6ed67dc7",
+          "width": 273,
+          "x": 141,
+          "y": 67,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1632,13 +1671,13 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Text",
+          "string": "0",
           "font": "",
-          "characterSize": 20,
+          "characterSize": 50,
           "color": {
-            "b": 0,
-            "g": 0,
-            "r": 0
+            "b": 255,
+            "g": 255,
+            "r": 255
           }
         },
         {
@@ -1700,6 +1739,46 @@
             "g": 0,
             "r": 0
           }
+        },
+        {
+          "name": "ScoreContainer",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\Star container.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -1778,6 +1857,30 @@
                 "offsetY",
                 "=",
                 "75"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Score",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "index",
+                "=",
+                "VariableString(Score)"
               ],
               "subInstructions": []
             }
@@ -2124,24 +2227,24 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ChangePlan"
-              },
-              "parameters": [
-                "Gem",
-                "=",
-                "Variable(ZOrder)"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
                 "value": "ModVarScene"
               },
               "parameters": [
                 "ZOrder",
                 "+",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Gem",
+                "=",
+                "Variable(ZOrder)"
               ],
               "subInstructions": []
             }
@@ -3428,18 +3531,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(index)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(index) + 6])"
@@ -3538,6 +3629,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "6"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
@@ -3789,18 +3904,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(child)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(child) + 1])"
@@ -3899,6 +4002,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "6"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
@@ -4161,18 +4288,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(index)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(index) + 6])"
@@ -4259,6 +4374,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "5"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
@@ -4498,18 +4637,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(child)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(child) + 1])"
@@ -4596,6 +4723,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "5"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
@@ -4846,18 +4997,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(index)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(index) + 6])"
@@ -4932,6 +5071,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "4"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
@@ -5159,18 +5322,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(child)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(child) + 1])"
@@ -5245,6 +5396,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "4"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
@@ -5413,17 +5588,6 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"refillItems\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
                     "value": "ModVarScene"
                   },
                   "parameters": [
@@ -5582,18 +5746,6 @@
                             "generateRandomColor",
                             "=",
                             "RandomInRange(0, 5)"
-                          ],
-                          "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "ModVarSceneTxt"
-                          },
-                          "parameters": [
-                            "storeIndex",
-                            "+",
-                            "\"index:\" + VariableString(index)+ \"_GRC:\" + VariableString(generateRandomColor) + \":::\" + VariableString(GemColorsTemp[Variable(generateRandomColor)]) + \"::\" + VariableString(Rows[0]) + \",\"  + VariableString(Rows[1]) + \",\"  + VariableString(Rows[2]) + \",\"  + VariableString(Rows[3]) + \",\"  + VariableString(Rows[4]) + \",\"  + VariableString(Rows[5]) + \",\"  +  \" /////////////////////////////// \""
                           ],
                           "subInstructions": []
                         },
@@ -5960,18 +6112,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(index)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(index) + 6])"
@@ -6034,6 +6174,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "3"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
@@ -6259,18 +6423,6 @@
                         "value": "TextObject::String"
                       },
                       "parameters": [
-                        "index",
-                        "=",
-                        "VariableString(Rows[Variable(child)])"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
                         "indexPlus1",
                         "=",
                         "VariableString(Rows[Variable(child) + 1])"
@@ -6333,6 +6485,30 @@
                       "parameters": [
                         "weHaveEmptyGems",
                         "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "3"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "index",
+                        "=",
+                        "VariableString(Score)"
                       ],
                       "subInstructions": []
                     }
