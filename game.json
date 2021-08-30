@@ -20,7 +20,7 @@
     "author": "@Lizard-13, D8H",
     "windowWidth": 1140,
     "windowHeight": 1980,
-    "latestCompilationDirectory": "D:\\web\\project - playable ads gdevelop\\_exports\\match3\\v2\\files",
+    "latestCompilationDirectory": "C:\\Users\\client\\Desktop\\ZahraJiryaee\\projects\\playable ads gdevelop\\_exports\\match3\\files",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -323,7 +323,7 @@
         "gridOffsetY": 75,
         "gridColor": 10401023,
         "snap": true,
-        "zoomFactor": 0.427452579333354,
+        "zoomFactor": 0.407452579333354,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1532,38 +1532,6 @@
           "x": 141,
           "y": 67,
           "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 152,
-          "layer": "",
-          "locked": false,
-          "name": "LightBlueGem",
-          "persistentUuid": "15041e2f-10c7-4a05-bd01-435671f1180c",
-          "width": 152,
-          "x": 414,
-          "y": 379,
-          "zOrder": 21,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 152,
-          "layer": "",
-          "locked": false,
-          "name": "LightBlueGem",
-          "persistentUuid": "afe43d9d-6c24-44d5-a92e-9326017f7306",
-          "width": 152,
-          "x": 566,
-          "y": 379,
-          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3539,7 +3507,82 @@
               "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "weHaveEmptyGems",
+                    "False"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "Rows[Variable(droppedItemTemp.id)]",
+                    "=",
+                    "VariableString(droppedItemTemp.color)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "Rows[Variable(draggedItemTemp.id)]",
+                    "=",
+                    "VariableString(draggedItemTemp.color)"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SnapToGrid::generateGrid"
+                      },
+                      "parameters": [
+                        "",
+                        "DarkBlueGem",
+                        "GreenGem",
+                        "LightBlueGem",
+                        "NewObject",
+                        "PurpleGem",
+                        "RedGem",
+                        "YellowGem",
+                        "emptyGem",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            }
+          ]
         },
         {
           "disabled": false,
