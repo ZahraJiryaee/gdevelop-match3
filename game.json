@@ -323,7 +323,7 @@
         "gridOffsetY": 75,
         "gridColor": 10401023,
         "snap": true,
-        "zoomFactor": 0.2674525793333541,
+        "zoomFactor": 0.427452579333354,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1451,7 +1451,7 @@
           "width": 304,
           "x": 414,
           "y": 1595,
-          "zOrder": 4,
+          "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1483,7 +1483,7 @@
           "width": 0,
           "x": 766,
           "y": 250,
-          "zOrder": 6,
+          "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1499,7 +1499,7 @@
           "width": 0,
           "x": 766,
           "y": 341,
-          "zOrder": 7,
+          "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1515,7 +1515,7 @@
           "width": 0,
           "x": 766,
           "y": 431,
-          "zOrder": 10,
+          "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1532,6 +1532,38 @@
           "x": 141,
           "y": 67,
           "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 152,
+          "layer": "",
+          "locked": false,
+          "name": "LightBlueGem",
+          "persistentUuid": "15041e2f-10c7-4a05-bd01-435671f1180c",
+          "width": 152,
+          "x": 414,
+          "y": 379,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 152,
+          "layer": "",
+          "locked": false,
+          "name": "LightBlueGem",
+          "persistentUuid": "afe43d9d-6c24-44d5-a92e-9326017f7306",
+          "width": 152,
+          "x": 566,
+          "y": 379,
+          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2292,7 +2324,7 @@
               "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
-                  "disabled": false,
+                  "disabled": true,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
@@ -2313,7 +2345,7 @@
                   "events": []
                 },
                 {
-                  "disabled": false,
+                  "disabled": true,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Repeat",
                   "repeatExpression": "SceneWindowWidth() / Variable(cellWidth)",
@@ -2350,7 +2382,7 @@
                   "events": []
                 },
                 {
-                  "disabled": false,
+                  "disabled": true,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
@@ -2371,7 +2403,7 @@
                   "events": []
                 },
                 {
-                  "disabled": false,
+                  "disabled": true,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Repeat",
                   "repeatExpression": "SceneWindowHeight() / Variable(cellHeight)",
