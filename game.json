@@ -275,6 +275,24 @@
         "name": "assets\\Star container.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/particleTexture.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\particleTexture.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/sparkle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\sparkle.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -305,7 +323,7 @@
         "gridOffsetY": 75,
         "gridColor": 10401023,
         "snap": true,
-        "zoomFactor": 0.27890026319697525,
+        "zoomFactor": 0.2674525793333541,
         "windowMask": false
       },
       "objectsGroups": [
@@ -336,6 +354,14 @@
             },
             {
               "name": "emptyGem"
+            }
+          ]
+        },
+        {
+          "name": "Particles",
+          "objects": [
+            {
+              "name": "Particle"
             }
           ]
         }
@@ -1058,6 +1084,311 @@
           "name": "Score",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "ShowParticle",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "mapIndexToX",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 110
+            },
+            {
+              "type": "number",
+              "value": 262
+            },
+            {
+              "type": "number",
+              "value": 414
+            },
+            {
+              "type": "number",
+              "value": 566
+            },
+            {
+              "type": "number",
+              "value": 718
+            },
+            {
+              "type": "number",
+              "value": 870
+            },
+            {
+              "type": "number",
+              "value": 110
+            },
+            {
+              "type": "number",
+              "value": 262
+            },
+            {
+              "type": "number",
+              "value": 414
+            },
+            {
+              "type": "number",
+              "value": 566
+            },
+            {
+              "type": "number",
+              "value": 718
+            },
+            {
+              "type": "number",
+              "value": 870
+            },
+            {
+              "type": "number",
+              "value": 110
+            },
+            {
+              "type": "number",
+              "value": 262
+            },
+            {
+              "type": "number",
+              "value": 414
+            },
+            {
+              "type": "number",
+              "value": 566
+            },
+            {
+              "type": "number",
+              "value": 718
+            },
+            {
+              "type": "number",
+              "value": 870
+            },
+            {
+              "type": "number",
+              "value": 110
+            },
+            {
+              "type": "number",
+              "value": 262
+            },
+            {
+              "type": "number",
+              "value": 414
+            },
+            {
+              "type": "number",
+              "value": 566
+            },
+            {
+              "type": "number",
+              "value": 718
+            },
+            {
+              "type": "number",
+              "value": 870
+            },
+            {
+              "type": "number",
+              "value": 110
+            },
+            {
+              "type": "number",
+              "value": 262
+            },
+            {
+              "type": "number",
+              "value": 414
+            },
+            {
+              "type": "number",
+              "value": 566
+            },
+            {
+              "type": "number",
+              "value": 718
+            },
+            {
+              "type": "number",
+              "value": 870
+            },
+            {
+              "type": "number",
+              "value": 110
+            },
+            {
+              "type": "number",
+              "value": 262
+            },
+            {
+              "type": "number",
+              "value": 414
+            },
+            {
+              "type": "number",
+              "value": 566
+            },
+            {
+              "type": "number",
+              "value": 718
+            },
+            {
+              "type": "number",
+              "value": 870
+            }
+          ]
+        },
+        {
+          "name": "mapIndexToY",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 531
+            },
+            {
+              "type": "number",
+              "value": 531
+            },
+            {
+              "type": "number",
+              "value": 531
+            },
+            {
+              "type": "number",
+              "value": 531
+            },
+            {
+              "type": "number",
+              "value": 531
+            },
+            {
+              "type": "number",
+              "value": 531
+            },
+            {
+              "type": "number",
+              "value": 683
+            },
+            {
+              "type": "number",
+              "value": 683
+            },
+            {
+              "type": "number",
+              "value": 683
+            },
+            {
+              "type": "number",
+              "value": 683
+            },
+            {
+              "type": "number",
+              "value": 683
+            },
+            {
+              "type": "number",
+              "value": 683
+            },
+            {
+              "type": "number",
+              "value": 835
+            },
+            {
+              "type": "number",
+              "value": 835
+            },
+            {
+              "type": "number",
+              "value": 835
+            },
+            {
+              "type": "number",
+              "value": 835
+            },
+            {
+              "type": "number",
+              "value": 835
+            },
+            {
+              "type": "number",
+              "value": 835
+            },
+            {
+              "type": "number",
+              "value": 987
+            },
+            {
+              "type": "number",
+              "value": 987
+            },
+            {
+              "type": "number",
+              "value": 987
+            },
+            {
+              "type": "number",
+              "value": 987
+            },
+            {
+              "type": "number",
+              "value": 987
+            },
+            {
+              "type": "number",
+              "value": 987
+            },
+            {
+              "type": "number",
+              "value": 1139
+            },
+            {
+              "type": "number",
+              "value": 1139
+            },
+            {
+              "type": "number",
+              "value": 1139
+            },
+            {
+              "type": "number",
+              "value": 1139
+            },
+            {
+              "type": "number",
+              "value": 1139
+            },
+            {
+              "type": "number",
+              "value": 1139
+            },
+            {
+              "type": "number",
+              "value": 1291
+            },
+            {
+              "type": "number",
+              "value": 1291
+            },
+            {
+              "type": "number",
+              "value": 1291
+            },
+            {
+              "type": "number",
+              "value": 1291
+            },
+            {
+              "type": "number",
+              "value": 1291
+            },
+            {
+              "type": "number",
+              "value": 1291
+            }
+          ]
         }
       ],
       "instances": [
@@ -1777,6 +2108,69 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "additive": true,
+          "alphaParam": "Mutable",
+          "angleParam": "Mutable",
+          "blueParam": "Random",
+          "destroyWhenNoParticles": false,
+          "emissionEditionSimpleMode": true,
+          "emitterAngleA": 0,
+          "emitterAngleB": 360,
+          "emitterForceMax": 85,
+          "emitterForceMin": 45,
+          "emitterXDirection": 0,
+          "emitterYDirection": 1,
+          "emitterZDirection": 0,
+          "flow": 1,
+          "friction": 2,
+          "gravityEditionSimpleMode": true,
+          "greenParam": "Random",
+          "maxParticleNb": 300,
+          "name": "Particle",
+          "particleAlpha1": 204,
+          "particleAlpha2": 0,
+          "particleAlphaRandomness1": 0,
+          "particleAlphaRandomness2": 0,
+          "particleAngle1": 0,
+          "particleAngle2": 90,
+          "particleAngleRandomness1": 0,
+          "particleAngleRandomness2": 0,
+          "particleBlue1": 0,
+          "particleBlue2": 0,
+          "particleEditionSimpleMode": true,
+          "particleGravityX": 0,
+          "particleGravityY": 0,
+          "particleGravityZ": 0,
+          "particleGreen1": 255,
+          "particleGreen2": 255,
+          "particleLifeTimeMax": 2,
+          "particleLifeTimeMin": 0.5,
+          "particleRed1": 255,
+          "particleRed2": 255,
+          "particleSize1": 100,
+          "particleSize2": 100,
+          "particleSizeRandomness1": 0,
+          "particleSizeRandomness2": 0,
+          "redParam": "Enabled",
+          "rendererParam1": 3,
+          "rendererParam2": 1,
+          "rendererType": "Quad",
+          "sizeParam": "Mutable",
+          "tags": "",
+          "tank": -1,
+          "textureParticleName": "assets\\particleTexture.png",
+          "type": "ParticleSystem::ParticleEmitter",
+          "zoneRadius": 3,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
             }
           ]
         }
@@ -3147,6 +3541,18 @@
             {
               "type": {
                 "inverted": false,
+                "value": "SnapToGrid::SetParticles"
+              },
+              "parameters": [
+                "",
+                "Particle",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "SnapToGrid::RefillItems"
               },
               "parameters": [
@@ -3408,6 +3814,158 @@
       ],
       "dependencies": [],
       "eventsFunctions": [
+        {
+          "description": "SetParticles",
+          "fullName": "SetParticles",
+          "functionType": "Action",
+          "name": "SetParticles",
+          "private": false,
+          "sentence": "SetParticles",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "index",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "36",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(index)]",
+                        "=",
+                        "\"emptyGem\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "ShowParticle",
+                        "False"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "CreateByName"
+                      },
+                      "parameters": [
+                        "",
+                        "Particle",
+                        "\"Particle\"",
+                        "Variable(mapIndexToX[Variable(index)]) + 76",
+                        "Variable(mapIndexToY[Variable(index)]) + 76",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "index",
+                        "+",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ParticleSystem::Flow"
+                  },
+                  "parameters": [
+                    "Particle",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "",
+              "longDescription": "",
+              "name": "Particle",
+              "optional": false,
+              "supplementaryInformation": "ParticleSystem::ParticleEmitter",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
         {
           "description": "Match6InColumn",
           "fullName": "Match6InColumn",
