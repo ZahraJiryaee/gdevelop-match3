@@ -11,16 +11,17 @@
     "folderProject": false,
     "orientation": "default",
     "packageName": "com.example.snap",
+    "pixelsRounding": false,
     "projectUuid": "3319d892-0cb4-4437-8568-6fe5fff4c5ff",
     "scaleMode": "linear",
     "sizeOnStartupMode": "",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
-    "name": "SnapToGrid",
+    "name": "Match3",
     "author": "@Lizard-13, D8H",
     "windowWidth": 1140,
     "windowHeight": 1980,
-    "latestCompilationDirectory": "C:\\Users\\client\\Desktop\\ZahraJiryaee\\projects\\playable ads gdevelop\\_exports\\match3\\files",
+    "latestCompilationDirectory": "D:\\PassionSpace\\projects - playable ads - gdevelop\\_exports\\match3\\files",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -41,6 +42,7 @@
       "showGDevelopSplash": true,
       "showProgressBar": true
     },
+    "authorIds": [],
     "extensionProperties": [],
     "platforms": [
       {
@@ -322,8 +324,9 @@
         "gridOffsetX": 110,
         "gridOffsetY": 75,
         "gridColor": 10401023,
+        "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.407452579333354,
+        "zoomFactor": 0.23157058556126284,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1389,6 +1392,11 @@
               "value": 1291
             }
           ]
+        },
+        {
+          "name": "isMoveValid",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -2113,22 +2121,12 @@
         },
         {
           "additive": true,
-          "alphaParam": "Mutable",
-          "angleParam": "Mutable",
-          "blueParam": "Random",
           "destroyWhenNoParticles": false,
-          "emissionEditionSimpleMode": true,
           "emitterAngleA": 0,
           "emitterAngleB": 360,
           "emitterForceMax": 85,
           "emitterForceMin": 45,
-          "emitterXDirection": 0,
-          "emitterYDirection": 1,
-          "emitterZDirection": 0,
           "flow": 1,
-          "friction": 2,
-          "gravityEditionSimpleMode": true,
-          "greenParam": "Random",
           "maxParticleNb": 300,
           "name": "Particle",
           "particleAlpha1": 204,
@@ -2141,10 +2139,8 @@
           "particleAngleRandomness2": 0,
           "particleBlue1": 0,
           "particleBlue2": 0,
-          "particleEditionSimpleMode": true,
           "particleGravityX": 0,
           "particleGravityY": 0,
-          "particleGravityZ": 0,
           "particleGreen1": 255,
           "particleGreen2": 255,
           "particleLifeTimeMax": 2,
@@ -2155,11 +2151,9 @@
           "particleSize2": 100,
           "particleSizeRandomness1": 0,
           "particleSizeRandomness2": 0,
-          "redParam": "Enabled",
           "rendererParam1": 3,
           "rendererParam2": 1,
           "rendererType": "Quad",
-          "sizeParam": "Mutable",
           "tags": "",
           "tank": -1,
           "textureParticleName": "assets\\particleTexture.png",
@@ -2176,6 +2170,58 @@
         }
       ],
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "2",
+                "\"gemDragged\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SnapToGrid::generateGrid"
+              },
+              "parameters": [
+                "",
+                "DarkBlueGem",
+                "GreenGem",
+                "LightBlueGem",
+                "NewObject",
+                "PurpleGem",
+                "RedGem",
+                "YellowGem",
+                "emptyGem",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "RemoveTimer"
+              },
+              "parameters": [
+                "",
+                "\"gemDragged\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
         {
           "disabled": false,
           "folded": false,
@@ -2641,6 +2687,28 @@
                 "Variable(ZOrder)"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "isMoveValid",
+                "False"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"gemDragged\""
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -2857,7 +2925,7 @@
                   "parameters": [
                     "leftItem",
                     "=",
-                    "-1000"
+                    "-3000"
                   ],
                   "subInstructions": []
                 }
@@ -2925,7 +2993,7 @@
                   "parameters": [
                     "upItem",
                     "=",
-                    "-2000"
+                    "-3000"
                   ],
                   "subInstructions": []
                 }
@@ -3208,6 +3276,17 @@
                     "True"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "isMoveValid",
+                    "True"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "events": []
@@ -3284,6 +3363,17 @@
                   "parameters": [
                     "resetItems",
                     "True"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "isMoveValid",
+                    "False"
                   ],
                   "subInstructions": []
                 }
@@ -3519,66 +3609,87 @@
                     "value": "SceneVariableAsBoolean"
                   },
                   "parameters": [
-                    "weHaveEmptyGems",
-                    "False"
+                    "isMoveValid",
+                    "True"
                   ],
                   "subInstructions": []
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarSceneTxt"
-                  },
-                  "parameters": [
-                    "Rows[Variable(droppedItemTemp.id)]",
-                    "=",
-                    "VariableString(droppedItemTemp.color)"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarSceneTxt"
-                  },
-                  "parameters": [
-                    "Rows[Variable(draggedItemTemp.id)]",
-                    "=",
-                    "VariableString(draggedItemTemp.color)"
-                  ],
-                  "subInstructions": []
-                }
-              ],
+              "actions": [],
               "events": [
                 {
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
+                  "conditions": [
                     {
                       "type": {
                         "inverted": false,
-                        "value": "SnapToGrid::generateGrid"
+                        "value": "SceneVariableAsBoolean"
                       },
                       "parameters": [
-                        "",
-                        "DarkBlueGem",
-                        "GreenGem",
-                        "LightBlueGem",
-                        "NewObject",
-                        "PurpleGem",
-                        "RedGem",
-                        "YellowGem",
-                        "emptyGem",
-                        ""
+                        "weHaveEmptyGems",
+                        "False"
                       ],
                       "subInstructions": []
                     }
                   ],
-                  "events": []
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(droppedItemTemp.id)]",
+                        "=",
+                        "VariableString(droppedItemTemp.color)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarSceneTxt"
+                      },
+                      "parameters": [
+                        "Rows[Variable(draggedItemTemp.id)]",
+                        "=",
+                        "VariableString(draggedItemTemp.color)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "SnapToGrid::generateGrid"
+                          },
+                          "parameters": [
+                            "",
+                            "DarkBlueGem",
+                            "GreenGem",
+                            "LightBlueGem",
+                            "NewObject",
+                            "PurpleGem",
+                            "RedGem",
+                            "YellowGem",
+                            "emptyGem",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 }
               ]
             }
@@ -3887,6 +3998,7 @@
         "positioning",
         "tiles"
       ],
+      "authorIds": [],
       "dependencies": [],
       "eventsFunctions": [
         {
@@ -3916,14 +4028,6 @@
                   "subInstructions": []
                 }
               ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [],
               "events": []
             },
             {
@@ -6445,18 +6549,6 @@
                             "\"emptyGem\""
                           ],
                           "subInstructions": []
-                        },
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "VarSceneTxt"
-                          },
-                          "parameters": [
-                            "Rows[Variable(index) + 6]",
-                            "=",
-                            "\"0\""
-                          ],
-                          "subInstructions": []
                         }
                       ]
                     }
@@ -7346,18 +7438,6 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "TextObject::String"
-                  },
-                  "parameters": [
-                    "NewObject",
-                    "=",
-                    "VariableString(index) + \"start: \""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
                     "value": "Delete"
                   },
                   "parameters": [
@@ -7829,291 +7909,6 @@
         }
       ],
       "eventsBasedBehaviors": []
-    },
-    {
-      "author": "D8H",
-      "description": "An action which, when applied on some objects, snap these objects to a *virtual grid*, with cells having customizable width and height.\n\nUseful for level editors or putting objects on a tiled based map (RPG, strategy games, or any tiled based game in general).",
-      "extensionNamespace": "",
-      "fullName": "Hexagonal grid",
-      "helpPath": "",
-      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWhleGFnb24tbXVsdGlwbGUtb3V0bGluZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik05LjM3IDRMMTAuNzggNi41TDkuMzcgOUg2LjYzTDUuMjMgNi41TDYuNjMgNEg5LjM3TTEwLjI1IDJINS43NUM1LjU2IDIgNS4zOSAyLjExIDUuMzEgMi4yNkwzLjA5IDYuMjJMMyA2LjVMMy4wOSA2Ljc4TDUuMzEgMTAuNzRDNS4zOSAxMC44OSA1LjU2IDExIDUuNzUgMTFIMTAuMjVDMTAuNDQgMTEgMTAuNjEgMTAuODkgMTAuNjkgMTAuNzRMMTIuOTEgNi43OEwxMyA2LjVMMTIuOTEgNi4yMkwxMC42OSAyLjI2QzEwLjYxIDIuMTEgMTAuNDQgMiAxMC4yNSAyTTE4LjYyIDkuNUwyMCAxMkwxOC42MiAxNC41SDE1Ljg4TDE0LjUgMTJMMTUuODggOS41SDE4LjYyTTE5LjUgNy41SDE1QzE0LjgxIDcuNSAxNC42NCA3LjYxIDE0LjU2IDcuNzZMMTIuMzQgMTEuNzJMMTIuMjUgMTJMMTIuMzQgMTIuMjhMMTQuNTYgMTYuMjRDMTQuNjQgMTYuMzkgMTQuODEgMTYuNSAxNSAxNi41SDE5LjVDMTkuNjkgMTYuNSAxOS44NiAxNi4zOSAxOS45NCAxNi4yNEwyMi4xNiAxMi4yOEwyMi4yNSAxMkwyMi4xNiAxMS43MkwxOS45NCA3Ljc2QzE5Ljg2IDcuNjEgMTkuNjkgNy41IDE5LjUgNy41TTkuMzcgMTVMMTAuNzggMTcuNUw5LjM3IDIwSDYuNjNMNS4yMyAxNy41TDYuNjMgMTVIOS4zN00xMC4yNSAxM0g1Ljc1QzUuNTYgMTMgNS4zOSAxMy4xMSA1LjMxIDEzLjI2TDMuMDkgMTcuMjJMMyAxNy41TDMuMDkgMTcuNzhMNS4zMSAyMS43NEM1LjM5IDIxLjg5IDUuNTYgMjIgNS43NSAyMkgxMC4yNUMxMC40NCAyMiAxMC42MSAyMS44OSAxMC42OSAyMS43NEwxMi45MSAxNy43OEwxMyAxNy41TDEyLjkxIDE3LjIyTDEwLjY5IDEzLjI2QzEwLjYxIDEzLjExIDEwLjQ0IDEzIDEwLjI1IDEzWiIgLz48L3N2Zz4=",
-      "name": "HexagonalGrid",
-      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/hexagon-multiple-outline.svg",
-      "shortDescription": "Action to snap objects to a virtual hexagonal grid during the game.",
-      "version": "0.0.1",
-      "tags": [
-        "hexagon",
-        "bubble",
-        "grid",
-        "snap",
-        "positioning"
-      ],
-      "dependencies": [],
-      "eventsFunctions": [
-        {
-          "description": "Snap object to a virtual pointy topped hexagonal grid (this is not the grid used in the editor)",
-          "fullName": "Snap objects to a virtual pointy topped hexagonal grid",
-          "functionType": "Action",
-          "name": "SnapObjectToPointyToppedHexagonalGrid",
-          "private": false,
-          "sentence": "Snap _PARAM1_ to a virtual pointy topped hexagonal grid using cells with width: _PARAM2_px, height _PARAM3_px and an offset position (_PARAM4_; _PARAM5_)",
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": "// Insired from: https://www.redblobgames.com/grids/hexagons\n\nconst cellWidth = eventsFunctionContext.getArgument(\"CellWidth\");\nconst cellHeight = eventsFunctionContext.getArgument(\"CellHeight\");\nconst offsetX = eventsFunctionContext.getArgument(\"OffsetX\");\nconst offsetY = eventsFunctionContext.getArgument(\"OffsetY\");\n\nfor (const object of objects)\n{\n    // Find the hexagon cube coordinates for a given position \n\n    // The following is a simplified version of this:\n    //\n    // const x = (object.getX() - offsetX) * Math.sqrt(3) / cellWidth;\n    // const y = (object.getY() - offsetY) * 2 / cellHeight;\n    //\n    // const cubeX = Math.sqrt(3) / 3 * x  -  1/3 * y;\n    // const cubeZ =                          2/3 * y;\n\n    const x = (object.getX() - offsetX) / cellWidth;\n    const y = (object.getY() - offsetY) / cellHeight;\n\n    const cubeX = x - 2/3 * y;\n    const cubeZ =     4/3 * y;\n    const cubeY = -cubeX - cubeZ;\n\n    let roundX = Math.round(cubeX);\n    let roundY = Math.round(cubeY);\n    let roundZ = Math.round(cubeZ);\n\n    const deltaX = Math.abs(roundX - cubeX);\n    const deltaY = Math.abs(roundY - cubeY);\n    const deltaZ = Math.abs(roundZ - cubeZ);\n\n    if (deltaX > deltaY && deltaX > deltaZ)\n    {\n        roundX = -roundY - roundZ;\n    }\n    else if (deltaY > deltaZ)\n    {\n        roundY = -roundX - roundZ;\n    }\n    else\n    {\n        roundZ = -roundX - roundY;\n    }\n\n    // Hexagon cube coordinates to hexagon position\n\n    // The following is a simplified version of this:\n    //\n    // const positionX = Math.sqrt(3) * roundX  + Math.sqrt(3)/2 * roundZ;\n    // const positionY =                          3/2 * roundZ;\n    //\n    // object.setX(positionX * cellWidth / Math.sqrt(3) + offsetX);\n    // object.setY(positionY * cellHeight / 2 + offsetY);\n\n    const positionX = roundX + 1/2 * roundZ;\n    const positionY =          3/4 * roundZ;\n\n    object.setX(positionX * cellWidth + offsetX);\n    object.setY(positionY * cellHeight + offsetY);\n}",
-              "parameterObjects": "Object",
-              "useStrict": true,
-              "eventsSheetExpanded": true
-            }
-          ],
-          "parameters": [
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Objects to snap to the virtual grid",
-              "longDescription": "",
-              "name": "Object",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "objectList"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Width of a cell of the virtual grid (in pixels)",
-              "longDescription": "",
-              "name": "CellWidth",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Height of a cell of the virtual grid (in pixels)",
-              "longDescription": "The actual row height will be 3/4 of this.",
-              "name": "CellHeight",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Offset on the X axis of the virtual grid (in pixels)",
-              "longDescription": "",
-              "name": "OffsetX",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Offset on the Y axis of the virtual grid (in pixels)",
-              "longDescription": "Odd rows are shifted from half a cell, use a \"CellHeight * 3/4\" offset to make it the other way.",
-              "name": "OffsetY",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            }
-          ],
-          "objectGroups": []
-        },
-        {
-          "description": "Snap object to a virtual flat topped hexagonal grid (this is not the grid used in the editor)",
-          "fullName": "Snap objects to a virtual flat topped hexagonal grid",
-          "functionType": "Action",
-          "name": "SnapObjectToFlatToppedHexagonalGrid",
-          "private": false,
-          "sentence": "Snap _PARAM1_ to a virtual flat topped hexagonal grid using cells with width: _PARAM2_px, height _PARAM3_px and an offset position (_PARAM4_; _PARAM5_)",
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "Note: this is the exact same code as for pointy topped hexagonal grid with x and y swapped.",
-              "comment2": ""
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": "// Insired from: https://www.redblobgames.com/grids/hexagons\n\nconst cellHeight = eventsFunctionContext.getArgument(\"CellWidth\");\nconst cellWidth = eventsFunctionContext.getArgument(\"CellHeight\");\nconst offsetY = eventsFunctionContext.getArgument(\"OffsetX\");\nconst offsetX = eventsFunctionContext.getArgument(\"OffsetY\");\n\nfor (const object of objects)\n{\n    // Find the hexagon cube coordinates for a given position \n\n    // The following is a simplified version of this:\n    //\n    // const x = (object.getX() - offsetX) * Math.sqrt(3) / cellWidth;\n    // const y = (object.getY() - offsetY) * 2 / cellHeight;\n    //\n    // const cubeX = Math.sqrt(3) / 3 * x  -  1/3 * y;\n    // const cubeZ =                          2/3 * y;\n\n    const x = (object.getY() - offsetX) / cellWidth;\n    const y = (object.getX() - offsetY) / cellHeight;\n\n    const cubeX = x - 2/3 * y;\n    const cubeZ =     4/3 * y;\n    const cubeY = -cubeX - cubeZ;\n\n    let roundX = Math.round(cubeX);\n    let roundY = Math.round(cubeY);\n    let roundZ = Math.round(cubeZ);\n\n    const deltaX = Math.abs(roundX - cubeX);\n    const deltaY = Math.abs(roundY - cubeY);\n    const deltaZ = Math.abs(roundZ - cubeZ);\n\n    if (deltaX > deltaY && deltaX > deltaZ)\n    {\n        roundX = -roundY - roundZ;\n    }\n    else if (deltaY > deltaZ)\n    {\n        roundY = -roundX - roundZ;\n    }\n    else\n    {\n        roundZ = -roundX - roundY;\n    }\n\n    // Hexagon cube coordinates to hexagon position\n\n    // The following is a simplified version of this:\n    //\n    // const positionX = Math.sqrt(3) * roundX  + Math.sqrt(3)/2 * roundZ;\n    // const positionY =                          3/2 * roundZ;\n    //\n    // object.setX(positionX * cellWidth / Math.sqrt(3) + offsetX);\n    // object.setY(positionY * cellHeight / 2 + offsetY);\n\n    const positionX = roundX + 1/2 * roundZ;\n    const positionY =          3/4 * roundZ;\n\n    object.setY(positionX * cellWidth + offsetX);\n    object.setX(positionY * cellHeight + offsetY);\n}",
-              "parameterObjects": "Object",
-              "useStrict": true,
-              "eventsSheetExpanded": true
-            }
-          ],
-          "parameters": [
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Objects to snap to the virtual grid",
-              "longDescription": "",
-              "name": "Object",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "objectList"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Width of a cell of the virtual grid (in pixels)",
-              "longDescription": "The actual column width will be 3/4 of this.",
-              "name": "CellWidth",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Height of a cell of the virtual grid (in pixels)",
-              "longDescription": "",
-              "name": "CellHeight",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Offset on the X axis of the virtual grid (in pixels)",
-              "longDescription": "Odd columns are shifted from half a cell, use a \"CellHeight * 3/4\" offset to make it the other way.",
-              "name": "OffsetX",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Offset on the Y axis of the virtual grid (in pixels)",
-              "longDescription": "",
-              "name": "OffsetY",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            }
-          ],
-          "objectGroups": []
-        },
-        {
-          "description": "Snap object to a virtual bubble grid (this is not the grid used in the editor)",
-          "fullName": "Snap objects to a virtual bubble grid",
-          "functionType": "Action",
-          "name": "SnapObjectToBubbleGrid",
-          "private": false,
-          "sentence": "Snap _PARAM1_ to a virtual bubble grid using cells with width: _PARAM2_px, height _PARAM3_px and an offset position (_PARAM4_; _PARAM5_)",
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "This grid is like bottles stacking, odd lines are shifted from half a cell. \n\nOn an hexagonal grid a line height is 3/4 of sprite height but with bubbles it is sin(60°) that is around 0.866 which is near 7/8 = 0.875\n(7/6)/(3/4) = 7/6\nUsing this ratio, the cellHeigt gives the 7/8 line height and this allows integer position as assets are often a multiple of 8.",
-              "comment2": ""
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "HexagonalGrid::SnapObjectToPointyToppedHexagonalGrid"
-                  },
-                  "parameters": [
-                    "",
-                    "Object",
-                    "GetArgumentAsNumber(\"CellWidth\")",
-                    "GetArgumentAsNumber(\"CellHeight\") * 7/6",
-                    "GetArgumentAsNumber(\"OffsetX\")",
-                    "GetArgumentAsNumber(\"OffsetY\")",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ],
-          "parameters": [
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Objects to snap to the virtual grid",
-              "longDescription": "",
-              "name": "Object",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "objectList"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Width of a cell of the virtual grid (in pixels)",
-              "longDescription": "",
-              "name": "CellWidth",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Height of a cell of the virtual grid (in pixels)",
-              "longDescription": "The actual row height will be 7/8 of this.",
-              "name": "CellHeight",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Offset on the X axis of the virtual grid (in pixels)",
-              "longDescription": "",
-              "name": "OffsetX",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            },
-            {
-              "codeOnly": false,
-              "defaultValue": "",
-              "description": "Offset on the Y axis of the virtual grid (in pixels)",
-              "longDescription": "Odd rows are shifted from half a cell, use a \"CellHeight * 7/8\" offset to make it the other way",
-              "name": "OffsetY",
-              "optional": false,
-              "supplementaryInformation": "",
-              "type": "expression"
-            }
-          ],
-          "objectGroups": []
-        }
-      ],
-      "eventsBasedBehaviors": []
     }
   ],
   "externalLayouts": [
@@ -8123,17 +7918,16 @@
       "instances": [],
       "editionSettings": {
         "grid": true,
-        "gridB": 255,
-        "gridG": 180,
+        "gridType": "rectangular",
+        "gridWidth": 10,
         "gridHeight": 10,
         "gridOffsetX": 0,
         "gridOffsetY": 0,
-        "gridR": 158,
-        "gridType": "rectangular",
-        "gridWidth": 10,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
         "snap": true,
-        "windowMask": false,
-        "zoomFactor": 0.8399999999999994
+        "zoomFactor": 0.8258331083104006,
+        "windowMask": false
       }
     }
   ],
